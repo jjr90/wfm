@@ -17,7 +17,7 @@ clean:
 obj:
 	mkdir obj
 
-obj/%.o: src/%.c obj
+obj/%.o: src/%.c | obj
 	${CC} ${CFLAGS} ${INCLUDE_DIR} -c $< -o $@
 
 obj/resource.o: res/resource.rc res/Application.manifest res/main.ico res/go.ico res/refresh.ico res/search.ico res/nav_arrow.ico res/up.ico res/copy.ico res/cut.ico res/paste.ico res/delete.ico res/new_folder.ico res/new_file.ico include/resource.h
